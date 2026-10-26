@@ -1,9 +1,12 @@
 # aitc-artifacts
 
-Mirror of third-party runtime binaries that AITC servers install. Each release holds exactly one upstream build:
+Mirror of third-party runtime binaries with checksums and provenance records.
 
-- the tag names the version and the sha256, e.g. `frankenphp-v1.13.3-sha256-d210c06b`;
-- the assets are the upstream file, `SHA256SUMS`, the upstream release metadata and the attestation verification output;
-- releases are immutable (repository setting), so a tag always serves the same bytes.
+Each immutable release contains one upstream build and its supporting files:
 
-Do not upload anything by hand. Releases are published by the pin helper in the infrastructure repository after upstream attestation and checks. Consumers must verify the full sha256 from their own pin, never trust this repository alone.
+- the upstream binary;
+- `SHA256SUMS`;
+- upstream release metadata;
+- attestation verification output.
+
+Release tags include the version and a shortened SHA256 checksum, for example `frankenphp-v1.13.3-sha256-d210c06b`.
